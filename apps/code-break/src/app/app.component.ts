@@ -21,7 +21,7 @@ export class AppComponent {
   constructor(private store: Store<AppState>) {
     this.gameConfigurationState$ = store.pipe(select(selectGameConfigurationState));
     this.attemptResults$ = store.pipe(select(selectCodeAttemptResults));
-    this.store.dispatch(startGame({columns: 2, rows: 10, numberOfColors: 2}));
+    this.store.dispatch(startGame({columns: 4, rows: 10, numberOfColors: 6}));
   }
 
   onCodeSubmit(codes: number[]) {
