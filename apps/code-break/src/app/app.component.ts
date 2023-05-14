@@ -4,7 +4,7 @@ import { insertCodeAttempt } from '@code-break/code-attempts';
 import { Observable } from 'rxjs';
 import { AppState } from './app.state';
 import { selectGameConfigurationState, startGame } from '@code-break/game-configuration';
-import { selectCodeAttemptResults } from './app.selctor';
+import { selectCodeAttemptResults, selectGameComplete, selectGameSuccess } from './app.selctor';
 
 @Component({
   selector: 'code-break-root',
@@ -16,11 +16,17 @@ export class AppComponent {
 
   gameConfigurationState$: Observable<any>;
   attemptResults$;
-
+  gameSuccess$;
+  gameComplete$;
 
   constructor(private store: Store<AppState>) {
     this.gameConfigurationState$ = store.pipe(select(selectGameConfigurationState));
     this.attemptResults$ = store.pipe(select(selectCodeAttemptResults));
+    this.gameSuccess$ = store.pipe(select(selectGameSuccess));
+    this.gameComplete$ = store.pipe(select(selectGameComplete));
+
+
+
     this.store.dispatch(startGame({columns: 4, rows: 10, numberOfColors: 6}));
   }
 

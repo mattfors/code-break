@@ -1,11 +1,12 @@
 import { AppComponent } from './app.component';
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { GameConfigurationModule } from '@code-break/game-configuration';
 import { CommonUiModule } from '@code-break/common-ui';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -25,6 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms';
         },
       }
     ),
+    StoreDevtoolsModule.instrument({
+      name: 'NgRx Demo App',
+      logOnly: !isDevMode()
+    }),
     CommonUiModule
   ],
   providers: [],

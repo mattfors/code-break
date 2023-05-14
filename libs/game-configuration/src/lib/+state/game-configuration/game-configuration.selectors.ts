@@ -9,3 +9,8 @@ export const selectSecretCode = createSelector(
   selectGameConfigurationState,
   (state: GameConfiguration) => state.secretCode
 );
+
+export const selectRows = createSelector(
+  selectGameConfigurationState,
+  (state: GameConfiguration) => state.rows
+);

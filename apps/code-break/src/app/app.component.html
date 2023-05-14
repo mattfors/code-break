@@ -1,5 +1,12 @@
 <code-break-game-board
   [rowData]="(attemptResults$ | async) || []"
   [config]="gameConfigurationState$ | async"
+  [enabled]="!(gameComplete$ | async)"
   (codeSubmit)="onCodeSubmit($event)"
 ></code-break-game-board>
+<div>
+  success: {{gameSuccess$ | async}}
+</div>
+<div>
+  complete: {{gameComplete$ | async}}
+</div>
