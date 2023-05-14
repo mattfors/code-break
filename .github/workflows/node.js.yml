@@ -40,7 +40,7 @@ jobs:
           targets: lint,build,deploy
           
       - name: Build App
-        run: nx run code-break:build:production          
+        run: nx run code-break:build:production --base-href=/code-break/          
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
