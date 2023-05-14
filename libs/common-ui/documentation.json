@@ -1,0 +1,745 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "CodeAttemptResultViewComponent",
+            "id": "component-CodeAttemptResultViewComponent-df8438096e9f057b170a1af07c7ce7b8e9377d2c8c1c6eec5eb2acd6cdac36b6779f65be6c2490a85dfdbd4d34daadc6c739b93ed96b66c11ae1ed9635655992",
+            "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "code-break-code-attempt-result-view",
+            "styleUrls": [
+                "./code-attempt-result-view.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./code-attempt-result-view.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "results",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nAn array representing the results of analyzing a code attempt.\n",
+                    "description": "<p>An array representing the results of analyzing a code attempt.</p>\n",
+                    "line": 22,
+                    "type": "(\"partial\" | \"exact\" | \"none\")[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "<p>This component is responsible for rendering a single row of results which indicates\nto the user the correctness of a code attempt.</p>\n",
+            "rawdescription": "\n\nThis component is responsible for rendering a single row of results which indicates\nto the user the correctness of a code attempt.\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n/**\n * This component is responsible for rendering a single row of results which indicates\n * to the user the correctness of a code attempt.\n */\n@Component({\n  selector: 'code-break-code-attempt-result-view',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './code-attempt-result-view.component.html',\n  styleUrls: ['./code-attempt-result-view.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class CodeAttemptResultViewComponent {\n\n  /**\n   * An array representing the results of analyzing a code attempt.\n   */\n  @Input()\n  results: ('partial' | 'exact' | 'none')[] = [];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".code-breaker-result-item {\n  border-style: solid;\n  border-width: 1px;\n  height: 10px;\n  width: 10px;\n  border-radius: 50%;\n}\n\n.code-break-results {\n  display: flex;\n}\n\n.code-breaker-code-result-exact {\n  background-color: crimson;\n}\n.code-breaker-code-result-partial {\n  background-color: yellow;\n}\n",
+                    "styleUrl": "./code-attempt-result-view.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"code-break-results\">\n  <div *ngFor=\"let result of results;\"\n       class=\"code-breaker-result-item\"\n       [class]=\"'code-breaker-code-result-'+result\">\n  </div>\n</div>\n"
+        },
+        {
+            "name": "CodeAttemptViewComponent",
+            "id": "component-CodeAttemptViewComponent-7b9694c875c29dc36982aa817287cc2ca92904a1af1ca07850f2c7594a87040a781e129aeb38f14a86f13a12c7ac19123bbce4c270546eb6533e0aaa596f89f9",
+            "file": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "code-break-code-attempt-view",
+            "styleUrls": [
+                "./code-attempt-view.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./code-attempt-view.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "codes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nAn array of codes\n",
+                    "description": "<p>An array of codes</p>\n",
+                    "line": 22,
+                    "type": "number[]",
+                    "decorators": []
+                },
+                {
+                    "name": "columns",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "enabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "selectedColumn",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "number | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "columnClick",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onCodeClick",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "<p>This component displays the color codes of an attempt.</p>\n",
+            "rawdescription": "\n\nThis component displays the color codes of an attempt.\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { GameBoardGridDataRow } from '../game-board-grid/game-board-grid.models';\n\n/**\n * This component displays the color codes of an attempt.\n */\n@Component({\n  selector: 'code-break-code-attempt-view',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './code-attempt-view.component.html',\n  styleUrls: ['./code-attempt-view.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class CodeAttemptViewComponent {\n\n  /**\n   * An array of codes\n   */\n  @Input()\n  codes: number[] = [];\n\n  @Input()\n  columns = 0;\n\n  @Input()\n  enabled = false;\n\n  @Input()\n  selectedColumn: number | null = null;\n\n  @Output()\n  columnClick = new EventEmitter<number>();\n\n  onCodeClick(index: number): void {\n    if (this.enabled) {\n      this.columnClick.emit(index);\n    }\n  }\n  get codeColumns(): number[] {\n    return [...this.codes, ...this.empties];\n  }\n\n  get empties(): number[] {\n    return Array(Math.max(this.columns - this.codes.length, 0)).fill(undefined);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".code-breaker-result {\n  display: flex;\n}\n\n.code-breaker-result-item {\n  border-style: solid;\n  border-width: 1px;\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n}\n\n.code-breaker-code-active {\n  border-color: pink;\n  border-width: 6px;\n}\n\n.code-breaker-code-value-0 {\n  background-color: darkviolet;\n}\n.code-breaker-code-value-1 {\n  background-color: steelblue;\n}\n.code-breaker-code-value-2 {\n  background-color: aqua;\n}\n.code-breaker-code-value-3 {\n  background-color: chartreuse;\n}\n.code-breaker-code-value-4 {\n  background-color: yellow;\n}\n.code-breaker-code-value-5 {\n  background-color: crimson;\n}\n\n",
+                    "styleUrl": "./code-attempt-view.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "codeColumns": {
+                    "name": "codeColumns",
+                    "getSignature": {
+                        "name": "codeColumns",
+                        "type": "[]",
+                        "returnType": "number[]",
+                        "line": 41
+                    }
+                },
+                "empties": {
+                    "name": "empties",
+                    "getSignature": {
+                        "name": "empties",
+                        "type": "[]",
+                        "returnType": "number[]",
+                        "line": 45
+                    }
+                }
+            },
+            "templateData": "<div class=\"code-breaker-result\">\n  <div *ngFor=\"let code of codeColumns; let i = index\"\n       class=\"code-breaker-result-item\"\n       [class]=\"'code-breaker-code-value-'+code\"\n       [class.code-breaker-code-active]=\"selectedColumn === i\"\n       (click)=\"onCodeClick(i)\">\n  </div>\n</div>\n"
+        },
+        {
+            "name": "GameBoardComponent",
+            "id": "component-GameBoardComponent-2807003c7de289f63c5a90e77774d2c8048092245f1d94a6062086b3c6ccc876137900e43f7f8d1772fdc37636705213011a6cd39d73a0839dc9740e09ff8405",
+            "file": "libs/common-ui/src/lib/game-board/game-board.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "code-break-game-board",
+            "styleUrls": [
+                "./game-board.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./game-board.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "config",
+                    "defaultValue": "{columns: 4, rows: 10, numberOfColors: 6}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "GameDefaults",
+                    "decorators": []
+                },
+                {
+                    "name": "rowData",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "GameBoardGridDataRow[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "codeSubmit",
+                    "defaultValue": "new EventEmitter<number[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "activeRowData",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "selectedColumn",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onColorPickerClick",
+                    "args": [
+                        {
+                            "name": "color",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "color",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "submitAttempt",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CodeAttemptViewComponent } from '../code-attempt-view/code-attempt-view.component';\nimport { GameBoardGridComponent } from '../game-board-grid/game-board-grid.component';\nimport { GameBoardGridDataRow } from '../game-board-grid/game-board-grid.models';\nimport { GameDefaults } from '@code-break/game-configuration';\n\n@Component({\n  selector: 'code-break-game-board',\n  standalone: true,\n  imports: [CommonModule, CodeAttemptViewComponent, GameBoardGridComponent],\n  templateUrl: './game-board.component.html',\n  styleUrls: ['./game-board.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class GameBoardComponent {\n  @Input()\n  rowData: GameBoardGridDataRow[] = [];\n\n  @Output()\n  codeSubmit = new EventEmitter<number[]>();\n\n  @Input()\n  config: GameDefaults = {columns: 4, rows: 10, numberOfColors: 6};\n\n  activeRowData: number[] = [];\n  selectedColumn = 0;\n\n  get colorOptions(): number[] {\n    return Array.from({ length: this.config.numberOfColors }, (v, i) => i);\n  }\n\n  submitAttempt() {\n    this.codeSubmit.emit(this.activeRowData);\n    this.activeRowData = Array(this.config.columns) as number[];\n    this.selectedColumn = 0;\n  }\n\n  onColorPickerClick(color: number) {\n    this.activeRowData[this.selectedColumn] =color;\n    this.selectedColumn = (this.selectedColumn + 1) % this.config.columns;\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./game-board.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "colorOptions": {
+                    "name": "colorOptions",
+                    "getSignature": {
+                        "name": "colorOptions",
+                        "type": "[]",
+                        "returnType": "number[]",
+                        "line": 29
+                    }
+                }
+            },
+            "templateData": "<code-break-game-board-grid\n  [activeRowData]=\"activeRowData\"\n  [rowData]=\"rowData\"\n  [config]=\"config\"\n  (columnClick)=\"selectedColumn = $event\"\n  [selectedColumn]=\"selectedColumn\"\n></code-break-game-board-grid>\n<code-break-code-attempt-view\n  [codes]=\"colorOptions\"\n  [enabled]=\"true\"\n  (columnClick)=\"onColorPickerClick($event)\"></code-break-code-attempt-view>\n<button (click)=\"submitAttempt()\">Submit</button>\n"
+        },
+        {
+            "name": "GameBoardGridComponent",
+            "id": "component-GameBoardGridComponent-751c89ab38131ec0347774392433159c1464801ac1951dd04de93eedc0370324f401490be383ea55be7a987c98c6c9376364bc376df3bcef47432c0d4d59769e",
+            "file": "libs/common-ui/src/lib/game-board-grid/game-board-grid.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "code-break-game-board-grid",
+            "styleUrls": [
+                "./game-board-grid.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./game-board-grid.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "activeRowData",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "number[]",
+                    "decorators": []
+                },
+                {
+                    "name": "config",
+                    "defaultValue": "{\n    columns: 4,\n    rows: 10\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "GameBoardConfiguration",
+                    "decorators": []
+                },
+                {
+                    "name": "rowData",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "GameBoardGridDataRow[]",
+                    "decorators": []
+                },
+                {
+                    "name": "selectedColumn",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "columnClick",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "emptyCodeAttempt",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "GameBoardGridDataRow",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "emptyCodeAttempts",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "GameBoardGridDataRow[]",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "onColumnClick",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CodeAttemptResultViewComponent } from '../code-attempt-result-view/code-attempt-result-view.component';\nimport { CodeAttemptViewComponent } from '../code-attempt-view/code-attempt-view.component';\n\nimport { GameBoardConfiguration, GameBoardGridDataRow } from './game-board-grid.models';\n\n\n@Component({\n  selector: 'code-break-game-board-grid',\n  standalone: true,\n  imports: [CommonModule, CodeAttemptViewComponent, CodeAttemptResultViewComponent],\n  templateUrl: './game-board-grid.component.html',\n  styleUrls: ['./game-board-grid.component.scss'],\n})\nexport class GameBoardGridComponent {\n\n  @Input()\n  rowData: GameBoardGridDataRow[] = [];\n\n  @Input()\n  config: GameBoardConfiguration = {\n    columns: 4,\n    rows: 10\n  };\n\n  @Input()\n  activeRowData: number[] = [];\n\n  @Output()\n  columnClick = new EventEmitter<number>();\n\n  @Input()\n  selectedColumn = 0;\n\n  get gridRows(): GameBoardGridDataRow[] {\n    return [...this.rowData, ...this.emptyCodeAttempts()].reverse();\n  }\n\n  get selectedRow(): number {\n    return this.config.rows - this.rowData.length - 1;\n  }\n\n  onColumnClick(index: number): void {\n    this.columnClick.emit(index);\n  }\n\n  private emptyCodeAttempts(): GameBoardGridDataRow[] {\n    return Array(Math.max(this.config.rows - this.rowData.length, 0)).fill(this.emptyCodeAttempt());\n  }\n\n  private emptyCodeAttempt(): GameBoardGridDataRow {\n    return {codes: Array(this.config.columns).fill('none'), results: Array(this.config.columns).fill('none')};\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".game-board-grid {\n  display: flex;\n}\n",
+                    "styleUrl": "./game-board-grid.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "gridRows": {
+                    "name": "gridRows",
+                    "getSignature": {
+                        "name": "gridRows",
+                        "type": "[]",
+                        "returnType": "GameBoardGridDataRow[]",
+                        "line": 36
+                    }
+                },
+                "selectedRow": {
+                    "name": "selectedRow",
+                    "getSignature": {
+                        "name": "selectedRow",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 40
+                    }
+                }
+            },
+            "templateData": "<div class=\"game-board-grid\" *ngFor=\"let row of gridRows; let i = index\">\n  <code-break-code-attempt-result-view\n    [results]=\"row.results\"></code-break-code-attempt-result-view>\n  <code-break-code-attempt-view\n    [columns]=\"config.columns\"\n    [selectedColumn]=\"i === selectedRow ? selectedColumn : null\"\n    [codes]=\"i === selectedRow ? activeRowData : row.codes\"\n    [enabled]=\"i === selectedRow\"\n    (columnClick)=\"onColumnClick($event)\"\n  ></code-break-code-attempt-view>\n</div>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Completed",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  render: (args: CodeAttemptResultViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    results: ['exact', 'exact', 'exact', 'exact'],\n  },\n}"
+            },
+            {
+                "name": "PartiallyCompleted",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  render: (args: CodeAttemptResultViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    results: ['exact', 'partial', 'none', 'none'],\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  render: (args: CodeAttemptResultViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    results: ['none', 'none', 'none', 'none'],\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  render: (args: CodeAttemptViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    codes: [0,1,2,3,4,5]\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/common-ui/src/lib/game-board-grid/game-board-grid.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  render: (args: GameBoardGridComponent) => ({\n    props: args,\n  }),\n  args: {\n    rowData: [\n      {results: ['exact', 'partial', 'partial', 'none', 'none', 'none'], codes: [0,1,2,3,4,5]},\n      {results: ['partial', 'partial', 'partial', 'none', 'none', 'none'], codes: [5,4,3,2,1,0]}\n    ],\n    config: {rows: 5, columns: 6},\n  },\n}"
+            },
+            {
+                "name": "Selection",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  render: (args: CodeAttemptViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    codes: [0,1,2,3,4,5],\n    selectedColumn: 3\n  },\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts": [
+                {
+                    "name": "Completed",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  render: (args: CodeAttemptResultViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    results: ['exact', 'exact', 'exact', 'exact'],\n  },\n}"
+                },
+                {
+                    "name": "PartiallyCompleted",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  render: (args: CodeAttemptResultViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    results: ['exact', 'partial', 'none', 'none'],\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  render: (args: CodeAttemptResultViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    results: ['none', 'none', 'none', 'none'],\n  },\n}"
+                }
+            ],
+            "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  render: (args: CodeAttemptViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    codes: [0,1,2,3,4,5]\n  },\n}"
+                },
+                {
+                    "name": "Selection",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  render: (args: CodeAttemptViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    codes: [0,1,2,3,4,5],\n    selectedColumn: 3\n  },\n}"
+                }
+            ],
+            "libs/common-ui/src/lib/game-board-grid/game-board-grid.component.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/common-ui/src/lib/game-board-grid/game-board-grid.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  render: (args: GameBoardGridComponent) => ({\n    props: args,\n  }),\n  args: {\n    rowData: [\n      {results: ['exact', 'partial', 'partial', 'none', 'none', 'none'], codes: [0,1,2,3,4,5]},\n      {results: ['partial', 'partial', 'partial', 'none', 'none', 'none'], codes: [5,4,3,2,1,0]}\n    ],\n    config: {rows: 5, columns: 6},\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 12,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Completed",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PartiallyCompleted",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CodeAttemptResultViewComponent",
+                "coveragePercent": 100,
+                "coverageCount": "2/2",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Selection",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CodeAttemptViewComponent",
+                "coveragePercent": 28,
+                "coverageCount": "2/7",
+                "status": "medium"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/game-board-grid/game-board-grid.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/game-board-grid/game-board-grid.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GameBoardGridComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/common-ui/src/lib/game-board/game-board.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GameBoardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            }
+        ]
+    }
+}

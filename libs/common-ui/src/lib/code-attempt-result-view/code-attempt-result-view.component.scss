@@ -1,0 +1,18 @@
+.code-breaker-result-item {
+  border-style: solid;
+  border-width: 1px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.code-break-results {
+  display: flex;
+}
+
+.code-breaker-code-result-exact {
+  background-color: crimson;
+}
+.code-breaker-code-result-partial {
+  background-color: yellow;
+}

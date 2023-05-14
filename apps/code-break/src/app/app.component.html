@@ -1,0 +1,5 @@
+<code-break-game-board
+  [rowData]="(attemptResults$ | async) || []"
+  [config]="gameConfigurationState$ | async"
+  (codeSubmit)="onCodeSubmit($event)"
+></code-break-game-board>

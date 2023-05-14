@@ -1,0 +1,11 @@
+<div class="game-board-grid" *ngFor="let row of gridRows; let i = index">
+  <code-break-code-attempt-result-view
+    [results]="row.results"></code-break-code-attempt-result-view>
+  <code-break-code-attempt-view
+    [columns]="config.columns"
+    [selectedColumn]="i === selectedRow ? selectedColumn : null"
+    [codes]="i === selectedRow ? activeRowData : row.codes"
+    [enabled]="i === selectedRow"
+    (columnClick)="onColumnClick($event)"
+  ></code-break-code-attempt-view>
+</div>

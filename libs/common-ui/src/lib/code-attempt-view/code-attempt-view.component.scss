@@ -1,0 +1,36 @@
+.code-breaker-result {
+  display: flex;
+}
+
+.code-breaker-result-item {
+  border-style: solid;
+  border-width: 1px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.code-breaker-code-active {
+  border-color: pink;
+  border-width: 6px;
+}
+
+.code-breaker-code-value-0 {
+  background-color: darkviolet;
+}
+.code-breaker-code-value-1 {
+  background-color: steelblue;
+}
+.code-breaker-code-value-2 {
+  background-color: aqua;
+}
+.code-breaker-code-value-3 {
+  background-color: chartreuse;
+}
+.code-breaker-code-value-4 {
+  background-color: yellow;
+}
+.code-breaker-code-value-5 {
+  background-color: crimson;
+}
+

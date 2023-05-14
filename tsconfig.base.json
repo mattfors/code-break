@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@code-break/code-attempts": ["libs/code-attempts/src/index.ts"],
+      "@code-break/common-ui": ["libs/common-ui/src/index.ts"],
+      "@code-break/game-configuration": ["libs/game-configuration/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
