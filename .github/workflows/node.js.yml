@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - run: npm install nx@latest
+      - run: npm install -g nx@latest
 
       - uses: mansagroup/nrwl-nx-action@v3
         with:
