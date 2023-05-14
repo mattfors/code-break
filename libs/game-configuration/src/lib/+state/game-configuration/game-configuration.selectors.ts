@@ -9,8 +9,3 @@ export const selectSecretCode = createSelector(
   selectGameConfigurationState,
   (state: GameConfiguration) => state.secretCode
 );
-
-export const selectColumns = createSelector(
-  selectGameConfigurationState,
-  (state: GameConfiguration) => state.columns
-);
