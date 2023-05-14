@@ -36,6 +36,9 @@ jobs:
       - uses: mansagroup/nrwl-nx-action@v3
         with:
           targets: lint,build,deploy
+          
+      - name: Build App
+        run: nx run code-break:build:production          
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
