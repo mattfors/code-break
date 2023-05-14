@@ -1,7 +1,7 @@
 <code-break-game-board
   [rowData]="(attemptResults$ | async) || []"
   [config]="gameConfigurationState$ | async"
-  [enabled]="!(gameComplete$ | async)"
+  [enabled]="(gameComplete$ | async) === false"
   (codeSubmit)="onCodeSubmit($event)"
 ></code-break-game-board>
 <div>
