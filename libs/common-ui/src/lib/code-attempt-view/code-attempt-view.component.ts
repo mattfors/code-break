@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GameBoardGridDataRow } from '../game-board-grid/game-board-grid.models';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatRippleModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /**
  * This component displays the color codes of an attempt.
@@ -8,7 +11,7 @@ import { GameBoardGridDataRow } from '../game-board-grid/game-board-grid.models'
 @Component({
   selector: 'code-break-code-attempt-view',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatSlideToggleModule, MatRippleModule],
   templateUrl: './code-attempt-view.component.html',
   styleUrls: ['./code-attempt-view.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -26,6 +29,9 @@ export class CodeAttemptViewComponent {
 
   @Input()
   enabled = false;
+
+  @Input()
+  clickable = false;
 
   @Input()
   selectedColumn: number | null = null;

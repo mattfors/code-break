@@ -1,8 +1,12 @@
 <div class="code-breaker-result">
-  <div *ngFor="let code of codeColumns; let i = index"
+  <div matRipple
+       *ngFor="let code of codeColumns; let i = index"
        class="code-breaker-result-item"
        [class]="'code-breaker-code-value-'+code"
        [class.code-breaker-code-active]="selectedColumn === i"
+       [class.code-breaker-code-inactive]="selectedColumn !== i"
+       [class.code-breaker-result-item-enabled]="enabled"
+       [matRippleDisabled]="!enabled"
        (click)="onCodeClick(i)">
   </div>
 </div>
