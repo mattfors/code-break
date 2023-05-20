@@ -1,5 +1,15 @@
 .code-breaker-result {
   display: flex;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.code-breaker-result-item-enabled {
+  cursor: pointer;
 }
 
 .code-breaker-result-item {
@@ -8,11 +18,17 @@
   height: 45px;
   width: 45px;
   border-radius: 50%;
+  border-width: 2px;
+}
+
+.code-breaker-code-inactive {
+  border-color: #ffffff;
+  background-color: #f1f1f1;
 }
 
 .code-breaker-code-active {
-  border-color: pink;
-  border-width: 6px;
+  border-color: black;
+  border-style: dashed;
 }
 
 .code-breaker-code-value-0 {

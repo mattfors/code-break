@@ -7,6 +7,7 @@ import { GameConfigurationModule } from '@code-break/game-configuration';
 import { CommonUiModule } from '@code-break/common-ui';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       name: 'NgRx Demo App',
       logOnly: !isDevMode()
     }),
-    CommonUiModule
+    CommonUiModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

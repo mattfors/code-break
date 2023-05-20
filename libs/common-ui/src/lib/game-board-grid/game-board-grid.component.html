@@ -6,6 +6,7 @@
     [selectedColumn]="i === selectedRow ? selectedColumn : null"
     [codes]="i === selectedRow ? activeRowData : row.codes"
     [enabled]="i === selectedRow"
+    [clickable]="false"
     (columnClick)="onColumnClick($event)"
   ></code-break-code-attempt-view>
 </div>

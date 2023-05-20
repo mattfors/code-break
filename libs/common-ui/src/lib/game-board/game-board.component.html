@@ -8,5 +8,6 @@
 <code-break-code-attempt-view
   [codes]="colorOptions"
   [enabled]="enabled"
+  [clickable]="true"
   (columnClick)="colorClicked($event)"></code-break-code-attempt-view>
 <button (click)="submitAttempt()" [disabled]="!enabled">Submit</button>
