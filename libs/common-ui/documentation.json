@@ -584,6 +584,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "libs/common-ui/src/lib/game-board/game-board.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  render: (args: GameBoardComponent) => ({\n    props: args,\n  }),\n  args: {\n    rowData: [\n      {results: ['exact', 'partial', 'partial', 'none'], codes: [0,1,2,3]},\n      {results: ['partial', 'partial', 'partial', 'none'], codes: [5,4,3,2]}\n    ],\n    config: { columns: 4, rows: 10, numberOfColors: 6 },\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "libs/common-ui/src/lib/code-attempt-result-view/code-attempt-result-view.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -599,16 +609,6 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  render: (args: CodeAttemptViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    codes: [0,1,2,3,4,5]\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/common-ui/src/lib/game-board/game-board.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  render: (args: GameBoardComponent) => ({\n    props: args,\n  }),\n  args: {\n    rowData: [\n      {results: ['exact', 'partial', 'partial', 'none'], codes: [0,1,2,3]},\n      {results: ['partial', 'partial', 'partial', 'none'], codes: [5,4,3,2]}\n    ],\n    config: { columns: 4, rows: 10, numberOfColors: 6 },\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -667,6 +667,18 @@
                     "defaultValue": "{\n  render: (args: CodeAttemptResultViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    results: ['none', 'none', 'none', 'none'],\n  },\n}"
                 }
             ],
+            "libs/common-ui/src/lib/game-board/game-board.component.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/common-ui/src/lib/game-board/game-board.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  render: (args: GameBoardComponent) => ({\n    props: args,\n  }),\n  args: {\n    rowData: [\n      {results: ['exact', 'partial', 'partial', 'none'], codes: [0,1,2,3]},\n      {results: ['partial', 'partial', 'partial', 'none'], codes: [5,4,3,2]}\n    ],\n    config: { columns: 4, rows: 10, numberOfColors: 6 },\n  },\n}"
+                }
+            ],
             "libs/common-ui/src/lib/code-attempt-view/code-attempt-view.component.stories.ts": [
                 {
                     "name": "Primary",
@@ -687,18 +699,6 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  render: (args: CodeAttemptViewComponent) => ({\n    props: args,\n  }),\n  args: {\n    codes: [0,1,2,3,4,5],\n    selectedColumn: 3\n  },\n}"
-                }
-            ],
-            "libs/common-ui/src/lib/game-board/game-board.component.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/common-ui/src/lib/game-board/game-board.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  render: (args: GameBoardComponent) => ({\n    props: args,\n  }),\n  args: {\n    rowData: [\n      {results: ['exact', 'partial', 'partial', 'none'], codes: [0,1,2,3]},\n      {results: ['partial', 'partial', 'partial', 'none'], codes: [5,4,3,2]}\n    ],\n    config: { columns: 4, rows: 10, numberOfColors: 6 },\n  },\n}"
                 }
             ],
             "libs/common-ui/src/lib/game-board-grid/game-board-grid.component.stories.ts": [
