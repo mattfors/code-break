@@ -21,7 +21,7 @@ export class GameBoardComponent {
   @Input()
   set config(config: GameDefaults) {
     this._config = config;
-    this.activeRowData = Array(this._config.columns) as number[];
+    this.reset();
   }
   _config: GameDefaults = {columns: 4, rows: 10, numberOfColors: 6};
 
@@ -31,17 +31,27 @@ export class GameBoardComponent {
   @Output()
   codeSubmit: EventEmitter<number[]> = new EventEmitter<number[]>();
 
-  activeRowData: number[] = [];
+  activeRowData: number[] = Array(this._config.columns) as number[];
   selectedColumn = 0;
 
   get colorOptions(): number[] {
     return Array.from({ length: this._config.numberOfColors }, (v, i) => i);
   }
 
+  get activeRowComplete(): boolean {
+    return Object.values(this.activeRowData).length === this.activeRowData.length;
+  }
 
+  get disableSubmit(): boolean {
+    return !this.enabled || !this.activeRowComplete;
+  }
 
-  submitAttempt() {
+  submitAttempt(): void {
     this.codeSubmit.emit(this.activeRowData);
+    this.reset();
+  }
+
+  reset(): void {
     this.activeRowData = Array(this._config.columns) as number[];
     this.selectedColumn = 0;
   }

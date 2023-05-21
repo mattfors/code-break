@@ -3,7 +3,6 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -14,7 +13,6 @@
 
 .code-breaker-result-item {
   border-style: solid;
-  border-width: 1px;
   height: 45px;
   width: 45px;
   border-radius: 50%;
@@ -29,6 +27,19 @@
 .code-breaker-code-active {
   border-color: black;
   border-style: dashed;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
 }
 
 .code-breaker-code-value-0 {
@@ -49,4 +60,3 @@
 .code-breaker-code-value-5 {
   background-color: crimson;
 }
-

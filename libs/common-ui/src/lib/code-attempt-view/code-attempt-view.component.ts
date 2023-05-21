@@ -31,9 +31,6 @@ export class CodeAttemptViewComponent {
   enabled = false;
 
   @Input()
-  clickable = false;
-
-  @Input()
   selectedColumn: number | null = null;
 
   @Output()
