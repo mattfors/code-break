@@ -5,7 +5,7 @@
     [columns]="config.columns"
     [selectedColumn]="i === selectedRow ? selectedColumn : null"
     [codes]="i === selectedRow ? activeRowData : row.codes"
-    [enabled]="i === selectedRow"
+    [enabled]="i === selectedRow  && enabled"
     (columnClick)="onColumnClick($event)"
   ></code-break-code-attempt-view>
 </div>
