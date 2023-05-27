@@ -5,6 +5,10 @@ import { GameBoardGridComponent } from '../game-board-grid/game-board-grid.compo
 import { GameBoardGridDataRow } from '../game-board-grid/game-board-grid.models';
 import { GameDefaults } from '@code-break/game-configuration';
 
+/**
+ * This is a stateless game board component which displays code attempts and their results, and an
+ * input row for selecting the colors of the next attempt.
+ */
 @Component({
   selector: 'code-break-game-board',
   standalone: true,

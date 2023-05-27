@@ -4,7 +4,8 @@ const config = {
   ],
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
+    '@storybook/addon-interactions'
   ],
   framework: {
     name: '@storybook/angular',

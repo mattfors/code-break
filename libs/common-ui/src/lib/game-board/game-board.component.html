@@ -7,7 +7,8 @@
   [selectedColumn]="selectedColumn"
 ></code-break-game-board-grid>
 <code-break-code-attempt-view
+  data-testid="game-board-color-picker"
   [codes]="colorOptions"
   [enabled]="enabled"
   (columnClick)="colorClicked($event)"></code-break-code-attempt-view>
-<button (click)="submitAttempt()" [disabled]="disableSubmit">Submit</button>
+<button (click)="submitAttempt()" [disabled]="disableSubmit" data-testid="game-board-submit-attempt">Submit</button>
