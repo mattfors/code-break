@@ -1,12 +1,14 @@
 <code-break-game-board-grid
   [activeRowData]="activeRowData"
+  [enabled]="enabled"
   [rowData]="rowData"
   [config]="_config"
   (columnClick)="selectedColumn = $event"
   [selectedColumn]="selectedColumn"
 ></code-break-game-board-grid>
 <code-break-code-attempt-view
+  data-testid="game-board-color-picker"
   [codes]="colorOptions"
   [enabled]="enabled"
   (columnClick)="colorClicked($event)"></code-break-code-attempt-view>
-<button (click)="submitAttempt()" [disabled]="disableSubmit">Submit</button>
+<button (click)="submitAttempt()" [disabled]="disableSubmit" data-testid="game-board-submit-attempt">Submit</button>

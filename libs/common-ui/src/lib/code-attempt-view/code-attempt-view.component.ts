@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GameBoardGridDataRow } from '../game-board-grid/game-board-grid.models';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRippleModule } from '@angular/material/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /**
  * This component displays the color codes of an attempt.
@@ -41,6 +39,11 @@ export class CodeAttemptViewComponent {
       this.columnClick.emit(index);
     }
   }
+
+  isColumnActive(index: number): boolean {
+    return this.selectedColumn === index && this.enabled;
+  }
+
   get codeColumns(): number[] {
     return [...this.codes, ...this.empties];
   }

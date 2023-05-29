@@ -33,6 +33,9 @@ export class GameBoardGridComponent {
   @Input()
   selectedColumn = 0;
 
+  @Input()
+  enabled = true;
+
   get gridRows(): GameBoardGridDataRow[] {
     return [...this.rowData, ...this.emptyCodeAttempts()].reverse();
   }
